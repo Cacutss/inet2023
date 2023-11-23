@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 move_uploaded_file($imagen['tmp_name'], $upload_path);
                 $sql="INSERT INTO noticia (Epigrafe,Imagen,Titular,Subtitulo,Cuerpo,Cierre) VALUES ('".$epigrafe."','".$nuevo_nombre_img."','".$titular."','".$subtitulo."','".$cuerpo."','".$cierre."')";
                 $result=mysqli_query(getConexion(),$sql);
-                header("Location: ../index.php");
+                header("Location: ../index.html");
             }else{
                 echo "<script>window.alert('UTILIZE FORMATO DE IMAGEN ADMITIDO'); window.location='../formulario/formulario.html';</script>";
             }
